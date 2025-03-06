@@ -6,7 +6,7 @@
 					<Setting Id="2_1"  Label="Follow the Girl" State="false"/>
 					<Setting Id="2_2"  Label="Shake off the Monsters" State="false"/>
 					<Setting Id="2_4"  Label="Follow the Brother's Scent" State="false"/>
-					<Setting Id="2_6"  Label="Slay the Chatacabra" State="false"/>
+					<Setting Id="2_5_1"  Label="Slay the Chatacabra" State="false"/>
 					<Setting Id="1-1End"  Label="Chapter 1-1 End" State="false"/>
 				</Setting>
 			</Setting>
