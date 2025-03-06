@@ -1,5 +1,5 @@
-//Monster Hunter Rise Autosplitter V1.0.0 (1 March 2025)
-//Supports RTA and Game Splits for main game
+//Monster Hunter Wilds Autosplitter (6 March 2025)
+//Supports Autosplits and Load Remover Time
 //Script & Pointers by TheDementedSalad
 
 state("MonsterHunterWilds"){}
