@@ -1,132 +1,145 @@
 <Settings>
-	<Setting Id="MainStory"  Label="Main Story Splits" State="false">
-		<Setting Id="Ch1"  Label="Chapter 1" State="false">
-			<Setting Id="Ch1-1"  Label="Chapter 1-1" State="false">
-				<Setting Id="1-1-1"  Label="Desert Trotters" State="false">
-					<Setting Id="2_1"  Label="Follow the Girl" State="false"/>
-					<Setting Id="2_2"  Label="Shake off the Monsters" State="false"/>
-					<Setting Id="2_4"  Label="Follow the Brother's Scent" State="false"/>
-					<Setting Id="2_5_1"  Label="Slay the Chatacabra" State="false"/>
-					<Setting Id="1-1End"  Label="Chapter 1-1 End" State="false"/>
+	<Setting Label="Main Story Splits">
+		<Setting Label="Chapter 1">
+			<Setting Label="Chapter 1-1">
+				<Setting Label="Desert Trotters">
+					<Setting Id="2_1"  Label="Follow the Girl"/>
+					<Setting Id="2_2"  Label="Shake off the Monsters"/>
+					<Setting Id="2_4"  Label="Follow the Brother's Scent"/>
+					<Setting Id="2_5f" Label="Slay the Chatacabra"/>
+					<Setting Id="2_6e" Label="Chapter 1-1 End"/>
 				</Setting>
 			</Setting>
-			<Setting Id="Ch1-2"  Label="Chapter 1-2" State="false">
-				<Setting Id="1-2-1"  Label="Back to Camp" State="false">
-					<Setting Id="3_1"  Label="Enter the Command Tent" State="false"/>
-					<Setting Id="4_0"  Label="Enter Your Tent" State="false"/>
+
+			<Setting Label="Chapter 1-2">
+				<Setting Label="Back to Camp">
+					<Setting Id="3_1" Label="Enter the Command Tent"/>
+					<Setting Id="4_0" Label="Enter Your Tent"/>
 				</Setting>
-				<Setting Id="1-2-2"  Label="The Beginning" State="false">
-					<Setting Id="5_0"  Label="Speak to Alma" State="false"/>
+				<Setting Label="The Beginning">
+					<Setting Id="5_0" Label="Speak to Alma"/>
 				</Setting>
-				<Setting Id="1-2-3"  Label="Village of Whispering Sands" State="false">
-					<Setting Id="5_1"  Label="Follow Y'sai to the Honey" State="false"/>
-					<Setting Id="5_2"  Label="Reach Y'sai's Village" State="false"/>
-					<Setting Id="5_5"  Label="Slay the Bulaqchi" State="false"/>
-					<Setting Id="5_7"  Label="Return to Base Camp" State="false"/>
-					<Setting Id="7_0"  Label="Speak to Alma" State="false"/>
-					<Setting Id="7_5"  Label="Return to Base Camp" State="false"/>
-					<Setting Id="9_0"  Label="Set off With Y'sai" State="false"/>
-					<Setting Id="9_3"  Label="Enjoy a Meal With Your Team" State="false"/>
-					<Setting Id="1-2End"  Label="Chapter 1-2 End" State="false"/>
-				</Setting>
-			</Setting>
-			<Setting Id="Ch1-3"  Label="Chapter 1-3" State="false">
-				<Setting Id="1-3-1"  Label="To the Forest" State="false">
-					<Setting Id="11_3"  Label="Speak to Erik" State="false"/>
-					<Setting Id="11_4"  Label="Head to the Campsite" State="false"/>
-					<Setting Id="11_6"  Label="Follow the Doshaguma Tracings" State="false"/>
-					<Setting Id="11_7"  Label="Slay the Lala Barina" State="false"/>
-					<Setting Id="13_0"  Label="Head to the Pop Up Camp" State="false"/>
-					<Setting Id="13_3"  Label="Talk With the Lynian Negotiator" State="false"/>
-					<Setting Id="1-3End"  Label="Chapter 1-3 End" State="false"/>
+				<Setting Label="Village of Whispering Winds">
+					<Setting Id="5_1"  Label="Follow Y'sai to the Honey"/>
+					<Setting Id="5_2"  Label="Reach Y'sai's Village"/>
+					<Setting Id="5_5"  Label="Slay the Bulaqchi"/>
+					<Setting Id="5_7"  Label="Return to Base Camp"/>
+					<Setting Id="7_0"  Label="Speak to Alma"/>
+					<Setting Id="7_5"  Label="Return to Base Camp"/>
+					<Setting Id="9_0"  Label="Set off With Y'sai"/>
+					<Setting Id="9_3"  Label="Enjoy a Meal With Your Team"/>
+					<Setting Id="9_4e" Label="Chapter 1-2 End"/>
 				</Setting>
 			</Setting>
-			<Setting Id="Ch1-4"  Label="Chapter 1-4" State="false">
-				<Setting Id="1-4-1"  Label="A Hunter's Pride" State="false">
-					<Setting Id="16_8"  Label="Slay the Balahara" State="false"/>
-					<Setting Id="17_3"  Label="Follow the Pack" State="false"/>
-					<Setting Id="17_6"  Label="Slay the Alpha Doshaguma" State="false"/>
-					<Setting Id="1-4End"  Label="Chapter 1-4 End" State="false"/>
+
+			<Setting Label="Chapter 1-3">
+				<Setting Label="To the Forest">
+					<Setting Id="11_3"  Label="Speak to Erik"/>
+					<Setting Id="11_4"  Label="Head to the Campsite"/>
+					<Setting Id="11_6"  Label="Follow the Doshaguma Tracings"/>
+					<Setting Id="11_7"  Label="Slay the Lala Barina"/>
+					<Setting Id="13_0"  Label="Head to the Pop Up Camp"/>
+					<Setting Id="13_3"  Label="Talk With the Lynian Negotiator"/>
+					<Setting Id="13_6e" Label="Chapter 1-3 End"/>
 				</Setting>
 			</Setting>
-			<Setting Id="Ch1-5"  Label="Chapter 1-5" State="false">
-				<Setting Id="1-5-2"  Label="Beyond the Deluge" State="false">
-					<Setting Id="19_2"  Label="Head to the depths of the Scarlet Forest" State="false"/>
-					<Setting Id="1-5End"  Label="Slay the Uth Duna (1-5 End_" State="false"/>
+
+			<Setting Label="Chapter 1-4">
+				<Setting Label="A Hunter's Pride">
+					<Setting Id="16_8"  Label="Slay the Balahara"/>
+					<Setting Id="17_3"  Label="Follow the Pack"/>
+					<Setting Id="17_6"  Label="Slay the Alpha Doshaguma"/>
+					<Setting Id="17_8e" Label="Chapter 1-4 End"/>
 				</Setting>
 			</Setting>
-		</Setting>
-		<Setting Id="Ch2"  Label="Chapter 2" State="false">
-			<Setting Id="Ch2-1"  Label="Chapter 2-1" State="false">
-				<Setting Id="2-1-1"  Label="A Looming Shadow" State="false">
-					<Setting Id="20_2"  Label="Go to the Wudwuds" State="false"/>
-				</Setting>
-				<Setting Id="2-1-2"  Label="Towards Fervent Fields" State="false">
-					<Setting Id="21_2"  Label="Travel to Azuz the Everforge" State="false"/>
-					<Setting Id="23_0"  Label="Talk to Alma" State="false"/>
-					<Setting Id="2-1End"  Label="Slay the Rompopolo (2-1 End)" State="false"/>
-				</Setting>
-			</Setting>
-			<Setting Id="Ch2-2"  Label="Chapter 2-2" State="false">
-				<Setting Id="2-2-2"  Label="The Eye of the Storm" State="false">
-					<Setting Id="25_2"  Label="Head to the Wind's Grasp" State="false"/>
-					<Setting Id="2-2End"  Label="Slay the Rey Dau (2-2 End)" State="false"/>
-				</Setting>
-			</Setting>
-			<Setting Id="Ch2-3"  Label="Chapter 2-3" State="false">
-				<Setting Id="2-3-2"  Label="Hopes of Home" State="false">
-					<Setting Id="27_2"  Label="Follow Satesh" State="false"/>
-					<Setting Id="27_6"  Label="Reach the Top of the Wall" State="false"/>
-					<Setting Id="27_7"  Label="Slay the Nerscylla" State="false"/>
-					<Setting Id="29_3"  Label="Sit at the Campfire" State="false"/>
-					<Setting Id="2-3End"  Label="Slay the Hirabami (2-3 End)" State="false"/>
-				</Setting>
-			</Setting>
-			<Setting Id="Ch2-4"  Label="Chapter 2-4" State="false">
-				<Setting Id="2-4-2"  Label="The Long Forgotten Flame" State="false">
-					<Setting Id="31_2"  Label="Follow Satesh" State="false"/>
-					<Setting Id="31_3"  Label="Slay the Ajaraken" State="false"/>
-					<Setting Id="33_0"  Label="Find The Black Flame" State="false"/>
-					<Setting Id="2-4End"  Label="Slay Nu Udra (2-4 End)" State="false"/>
+
+			<Setting Label="Chapter 1-5">
+				<Setting Label="Beyond the Deluge">
+					<Setting Id="19_2"  Label="Head to the depths of the Scarlet Forest"/>
+					<Setting Id="19_5e" Label="Slay the Uth Duna (1-5 End_"/>
 				</Setting>
 			</Setting>
 		</Setting>
-		<Setting Id="Ch3"  Label="Chapter 3" State="false">
-			<Setting Id="Ch3-1"  Label="Chapter 3-1" State="false">
-				<Setting Id="3-2-1"  Label="The Faithful Keepers" State="false">
-					<Setting Id="35_3"  Label="Follow Nata" State="false"/>
-					<Setting Id="35_4"  Label="Slay the Doshaguma" State="false"/>
-					<Setting Id="37_3"  Label="Slay the Rathalos" State="false"/>
-					<Setting Id="37_4"  Label="Return Nata Home" State="false"/>
-					<Setting Id="39_0"  Label="Talk to Tasheen" State="false"/>
-					<Setting Id="3-1End"  Label="Repel Guardian Arkveld (3-1 End)" State="false"/>
+
+		<Setting Label="Chapter 2">
+			<Setting Label="Chapter 2-1">
+				<Setting Label="A Looming Shadow">
+					<Setting Id="20_2" Label="Go to the Wudwuds"/>
+				</Setting>
+				<Setting Label="Toward Fervent Fields">
+					<Setting Id="21_2"  Label="Travel to Azuz the Everforge"/>
+					<Setting Id="23_0"  Label="Talk to Alma"/>
+					<Setting Id="23_5e" Label="Slay the Rompopolo (2-1 End)"/>
 				</Setting>
 			</Setting>
-			<Setting Id="Ch3-2"  Label="Chapter 3-2" State="false">
-				<Setting Id="3-2-2"  Label="Nothing Frozen, Nothing Gained" State="false">
-					<Setting Id="41_5"  Label="Continue Toward Suja" State="false"/>
-					<Setting Id="3-2End"  Label="Slay Jin Dahaad (3-2 End)" State="false"/>
+
+			<Setting Label="Chapter 2-2">
+				<Setting Label="The Eye of the Storm">
+					<Setting Id="25_2"  Label="Head to the Wind's Grasp"/>
+					<Setting Id="25_5e" Label="Slay the Rey Dau (2-2 End)"/>
 				</Setting>
 			</Setting>
-			<Setting Id="Ch3-3"  Label="Chapter 3-3" State="false">
-				<Setting Id="3-3-1"  Label="Nothing Frozen, Nothing Gained" State="false">
-					<Setting Id="42_5"  Label="Go to Dinner" State="false"/>
-				</Setting>
-				<Setting Id="3-3-2"  Label="A Path Forward" State="false">
-					<Setting Id="44_5"  Label="Set Out to Investigate" State="false"/>
-					<Setting Id="45_0"  Label="Slay the Ebony Odogaron" State="false"/>
-					<Setting Id="3-3End"  Label="Slay the Xu Wu (3-3 End)" State="false"/>
-				</Setting>
-			</Setting>
-			<Setting Id="Ch3-4"  Label="Chapter 3-4" State="false">
-				<Setting Id="3-4-1"  Label="Broken Chains" State="false">
-					<Setting Id="47_2"  Label="Head to the Lower Stratum of Wyverns Nest" State="false"/>
-					<Setting Id="3-4End"  Label="Slay the Guardian Arkveld (3-4 End)" State="false"/>
+
+			<Setting Label="Chapter 2-3">
+				<Setting Label="Hopes of Home">
+					<Setting Id="27_2"  Label="Follow Satesh"/>
+					<Setting Id="27_6"  Label="Reach the Top of the Wall"/>
+					<Setting Id="27_7"  Label="Slay the Nerscylla"/>
+					<Setting Id="29_3"  Label="Sit at the Campfire"/>
+					<Setting Id="29_7e" Label="Slay the Hirabami (2-3 End)"/>
 				</Setting>
 			</Setting>
-			<Setting Id="Ch3-5"  Label="Chapter 3-5" State="false">
-				<Setting Id="3-5-1"  Label="Monster Hunter" State="false">
-					<Setting Id="3-5End"  Label="Slay the Zoh Shia (3-5 End)" State="false"/>
+
+			<Setting Label="Chapter 2-4">
+				<Setting Label="Long-Forgotten Flame">
+					<Setting Id="31_2"  Label="Follow Satesh"/>
+					<Setting Id="31_3"  Label="Slay the Ajaraken"/>
+					<Setting Id="33_0"  Label="Find The Black Flame"/>
+					<Setting Id="33_3e" Label="Slay Nu Udra (2-4 End)"/>
+				</Setting>
+			</Setting>
+		</Setting>
+
+		<Setting Label="Chapter 3">
+			<Setting Label="Chapter 3-1">
+				<Setting Label="The Faithful Keepers">
+					<Setting Id="35_3"  Label="Follow Nata"/>
+					<Setting Id="35_4"  Label="Slay the Doshaguma"/>
+					<Setting Id="37_3"  Label="Slay the Rathalos"/>
+					<Setting Id="37_4"  Label="Return Nata Home"/>
+					<Setting Id="39_0"  Label="Talk to Tasheen"/>
+					<Setting Id="39_3e" Label="Repel Guardian Arkveld (3-1 End)"/>
+				</Setting>
+			</Setting>
+
+			<Setting Label="Chapter 3-2">
+				<Setting Label="Nothing Frozen, Nothing Gained">
+					<Setting Id="41_5"  Label="Continue Toward Suja"/>
+					<Setting Id="39_7e" Label="Slay Jin Dahaad (3-2 End)"/>
+				</Setting>
+			</Setting>
+
+			<Setting Label="Chapter 3-3">
+				<Setting Label="Through the Dusk">
+					<Setting Id="42_5" Label="Go to Dinner"/>
+				</Setting>
+				<Setting Label="Full Circle">
+					<Setting Id="44_5"  Label="Set Out to Investigate"/>
+					<Setting Id="45_0"  Label="Slay the Ebony Odogaron"/>
+					<Setting Id="45_2e" Label="Slay the Xu Wu (3-3 End)"/>
+				</Setting>
+			</Setting>
+
+			<Setting Label="Chapter 3-4">
+				<Setting Label="Broken Chains">
+					<Setting Id="47_2"  Label="Head to the Lower Stratum of Wyverns Nest"/>
+					<Setting Id="47_5e" Label="Slay the Guardian Arkveld (3-4 End)"/>
+				</Setting>
+			</Setting>
+
+			<Setting Label="Chapter 3-5">
+				<Setting Label="Monster Hunter">
+					<Setting Id="51_4e" Label="Slay the Zoh Shia (3-5 End)"/>
 				</Setting>
 			</Setting>
 		</Setting>
