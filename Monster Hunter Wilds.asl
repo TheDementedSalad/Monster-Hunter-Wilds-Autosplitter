@@ -8,6 +8,7 @@ startup
 {
 	Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Basic");
 	vars.Helper.Settings.CreateFromXml("Components/MHWilds.Settings.xml");
+	//vars.Helper.StartFileLogger("MHWilds_Log.txt");
 }
 
 init
@@ -42,6 +43,7 @@ init
 		vars.Helper["CurrentGameScene"] = vars.Helper.Make<int>(0x1338CC70, 0x90); //GameFlowManager
 		vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(0x132EB488, 0x1E0, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
 		vars.Helper["MissionID"] = vars.Helper.Make<int>(0x132EB488, 0x1E0, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
+		vars.Helper["IsResultFix"] = vars.Helper.Make<byte>(0x132EB488, 0x158, 0x9F); //MissionManager > _QuestDirector > IsResultFix
 		vars.Helper["FullFade"]= vars.Helper.Make<bool>(0x1332ADD8, 0x62); //FadeManager > IsVisibleStateAny
 	}
 	
@@ -77,6 +79,10 @@ split
 	
 	if(current.ObjectiveID != old.ObjectiveID || current.MissionID != old.MissionID){
 		setting = current.MissionID + "_" + current.ObjectiveID;
+	}
+	
+	if(current.IsResultFix == 1 && old.IsResultFix == 0){
+		setting = current.MissionID + "_" + current.ObjectiveID + "_" + current.IsResultFix;
 	}
 	
 	if(current.MissionID == 2 && old.ObjectiveID == 6 && current.ObjectiveID == 0){
