@@ -6,6 +6,7 @@ state("MonsterHunterWilds"){}
 
 startup
 {
+	timer.CurrentTimingMethod = TimingMethod.GameTime;
 	Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Basic");
 	vars.Helper.Settings.CreateFromXml("Components/MHWilds.Settings.xml");
 	//vars.Helper.StartFileLogger("MHWilds_Log.txt");
@@ -66,10 +67,6 @@ update
 	vars.Helper.Update();
 	vars.Helper.MapPointers();
 	
-	//print(vars.Helper.MainModule.Base.ToString());
-	
-	//print(current.EventID.ToString());
-	
 	//print(modules.First().ModuleMemorySize.ToString());
 }
 
@@ -77,73 +74,13 @@ split
 {
 	string setting = "";
 	
-	if(current.ObjectiveID != old.ObjectiveID || current.MissionID != old.MissionID){
-		setting = current.MissionID + "_" + current.ObjectiveID;
+	if(current.ObjectiveID != old.ObjectiveID || current.MissionID != old.MissionID || current.IsResultFix == 1 && old.IsResultFix == 0){
+		setting = current.MissionID + "_" + current.ObjectiveID + "_" + old.ObjectiveID + "_" + current.IsResultFix;
 	}
-	
-	if(current.IsResultFix == 1 && old.IsResultFix == 0){
-		setting = current.MissionID + "_" + current.ObjectiveID + "_" + current.IsResultFix;
-	}
-	
-	if(current.MissionID == 2 && old.ObjectiveID == 6 && current.ObjectiveID == 0){
-		setting = "1-1End";
-	}
-	
-	if(current.MissionID == 9 && old.ObjectiveID == 4 && current.ObjectiveID == 0){
-		setting = "1-2End";
-	}
-	
-	if(current.MissionID == 13 && old.ObjectiveID == 6 && current.ObjectiveID == 0){
-		setting = "1-3End";
-	}
-	
-	if(current.MissionID == 17 && old.ObjectiveID == 8 && current.ObjectiveID == 0){
-		setting = "1-4End";
-	}
-	
-	if(current.MissionID == 19 && old.ObjectiveID == 5 && current.ObjectiveID == 0){
-		setting = "1-5End";
-	}
-	
-	if(current.MissionID == 23 && old.ObjectiveID == 5 && current.ObjectiveID == 0){
-		setting = "2-1End";
-	}
-	
-	if(current.MissionID == 25 && old.ObjectiveID == 5 && current.ObjectiveID == 0){
-		setting = "2-2End";
-	}
-	
-	if(current.MissionID == 29 && old.ObjectiveID == 7 && current.ObjectiveID == 0){
-		setting = "2-3End";
-	}
-	
-	if(current.MissionID == 33 && old.ObjectiveID == 3 && current.ObjectiveID == 0){
-		setting = "2-4End";
-	}
-	
-	if(current.MissionID == 39 && old.ObjectiveID == 3 && current.ObjectiveID == 0){
-		setting = "3-1End";
-	}
-	
-	if(current.MissionID == 39 && old.ObjectiveID == 7 && current.ObjectiveID == 0){
-		setting = "3-2End";
-	}
-	
-	if(current.MissionID == 45 && old.ObjectiveID == 2 && current.ObjectiveID == 0){
-		setting = "3-3End";
-	}
-	
-	if(current.MissionID == 47 && old.ObjectiveID == 5 && current.ObjectiveID == 0){
-		setting = "3-4End";
-	}
-	
-	if(current.MissionID == 51 && old.ObjectiveID == 4 && current.ObjectiveID == 0){
-		setting = "3-5End";
-	}
-	
+
 	// Debug. Comment out before release.
-    if (!string.IsNullOrEmpty(setting))
-    vars.Log(setting);
+    //if (!string.IsNullOrEmpty(setting))
+    //vars.Log(setting);
 
 	if (settings.ContainsKey(setting) && settings[setting] && vars.completedSplits.Add(setting)){
 		return true;
@@ -159,5 +96,3 @@ reset
 {
 	return current.CutsceneID == 2 && old.CutsceneID != 2;
 }
-
-
