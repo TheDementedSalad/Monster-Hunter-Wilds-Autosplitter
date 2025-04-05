@@ -1,5 +1,5 @@
-//Monster Hunter Rise Autosplitter V1.0.0 (1 March 2025)
-//Supports RTA and Game Splits for main game
+//Monster Hunter Rise Autosplitter V1.0.1 (5 April 2025)
+//Supports LRT and Game Splits for main game
 //Script & Pointers by TheDementedSalad
 
 state("MonsterHunterWilds"){}
@@ -24,6 +24,9 @@ init
 		case (573317120):
 			version = "4 March 2025";
 			break;
+		case (591564800):
+			version = "4 April 2025";
+			break;
 	}
 	
 	IntPtr SoundManagerApp = vars.Uhara.ScanRel(3, "48 8b 3d ?? ?? ?? ?? 48 8b 72 ?? 48 85 f6");
@@ -31,7 +34,7 @@ init
 	IntPtr MissionManager = vars.Uhara.ScanRel(3, "48 8b 05 ?? ?? ?? ?? 48 8b 80 ?? ?? ?? ?? 4c 8b 60 ?? 4d 85 e4");
 	IntPtr DemoMediator = vars.Uhara.ScanRel(3, "48 8b 15 ?? ?? ?? ?? 48 8b 42 ?? 83 78 ?? ?? 0f 9f c0");
 	IntPtr FadeManager = vars.Uhara.ScanRel(3, "48 8b 15 ?? ?? ?? ?? 48 8b 86 ?? ?? ?? ?? c5");
-	IntPtr GameFlowManager = vars.Uhara.ScanRel(3, "48 8b 05 ?? ?? ?? ?? 75 ?? 80 b8");
+	IntPtr GameFlowManager = vars.Uhara.ScanRel(3, "48 8b 15 ?? ?? ?? ?? 48 89 f9 e8 ?? ?? ?? ?? 0f b6 c0");
 	//vars.Helper["Loading"] = vars.Helper.Make<bool>(SoundManagerApp, 0xE8);
 	
 	/*
@@ -51,13 +54,24 @@ init
 		
 	vars.Helper["CutsceneID"] = vars.Helper.Make<int>(DemoMediator, 0x68, 0x10, 0x20, 0x10, 0x44); //DemoMediator > 
 	vars.Helper["CutsceneID"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
-		
+	
 	vars.Helper["CurrentGameScene"] = vars.Helper.Make<int>(GameFlowManager, 0x90); //GameFlowManager
+	
+	if (version == "Release" || version == "4 March 2025"){
+		vars.Helper["QuestEndType"] = vars.Helper.Make<byte>(MissionManager, 0x158, 0x38, 0xCC); //MissionManager > _QuestDirector > QuestEndType
+		vars.Helper["QuestID"] = vars.Helper.Make<int>(MissionManager, 0x158, 0x20, 0x38); //MissionManager > _QuestDirector > MissionType
 		
-	vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(MissionManager, 0x1E0, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
-	vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x1E0, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
-	vars.Helper["QuestEndType"] = vars.Helper.Make<byte>(MissionManager, 0x158, 0x38, 0xCC); //MissionManager > _QuestDirector > QuestEndType
-	vars.Helper["QuestID"] = vars.Helper.Make<int>(MissionManager, 0x158, 0x20, 0x38); //MissionManager > _QuestDirector > MissionType
+		vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(MissionManager, 0x1E0, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
+		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x1E0, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
+	}
+	
+	else if (version == "4 April 2025"){
+		vars.Helper["QuestEndType"] = vars.Helper.Make<byte>(MissionManager, 0x158, 0x38, 0xDC); //MissionManager > _QuestDirector > QuestEndType
+		vars.Helper["QuestID"] = vars.Helper.Make<int>(MissionManager, 0x158, 0x20, 0x38); //MissionManager > _QuestDirector > MissionType
+		
+		vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(MissionManager, 0x1E8, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
+		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x1E8, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
+	}
 		
 	//vars.Helper["IsCurrentFramePause"] = vars.Helper.Make<bool>(PlayerManager, 0x114); //PlayerManager
 	
@@ -135,10 +149,12 @@ split
 
 isLoading
 {
-	return current.Loading || current.CutsceneID > 0 && current.CutsceneID < 10000 || current.CurrentGameScene == 0 || current.FullFade == 128;
+	return current.Loading || current.CutsceneID > 0 && current.CutsceneID < 10000 || current.FullFade == 128 || current.CurrentGameScene == 0;
 }
 
 reset
 {
 	return current.CutsceneID == 2 && old.CutsceneID != 2;
 }
+
+
