@@ -27,6 +27,9 @@ init
 		case (591564800):
 			version = "4 April 2025";
 			break;
+		case (579141632):
+			version = "16 April 2025";
+			break;
 	}
 	
 	IntPtr SoundManagerApp = vars.Uhara.ScanRel(3, "48 8b 3d ?? ?? ?? ?? 48 8b 72 ?? 48 85 f6");
@@ -65,7 +68,7 @@ init
 		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x1E0, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
 	}
 	
-	else if (version == "4 April 2025"){
+	else{
 		vars.Helper["QuestEndType"] = vars.Helper.Make<byte>(MissionManager, 0x158, 0x38, 0xDC); //MissionManager > _QuestDirector > QuestEndType
 		vars.Helper["QuestID"] = vars.Helper.Make<int>(MissionManager, 0x158, 0x20, 0x38); //MissionManager > _QuestDirector > MissionType
 		
