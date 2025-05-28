@@ -111,7 +111,7 @@ update
 	vars.Helper.Update();
 	vars.Helper.MapPointers();
 	
-	print(modules.First().ModuleMemorySize.ToString());
+	//print(modules.First().ModuleMemorySize.ToString());
 
 }
 
