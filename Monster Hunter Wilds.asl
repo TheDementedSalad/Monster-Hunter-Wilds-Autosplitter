@@ -1,4 +1,4 @@
-//Monster Hunter Rise Autosplitter V1.0.1 (5 April 2025)
+//Monster Hunter Rise Autosplitter V1.0.2 (28 May 2025)
 //Supports LRT and Game Splits for main game
 //Script & Pointers by TheDementedSalad
 
@@ -30,8 +30,11 @@ init
 		case (579141632):
 			version = "16 April 2025";
 			break;
+		case (584716288):
+			version = "28 May 2025";
+			break;
 	}
-	
+
 	IntPtr SoundManagerApp = vars.Uhara.ScanRel(3, "48 8b 3d ?? ?? ?? ?? 48 8b 72 ?? 48 85 f6");
 	IntPtr PlayerManager = vars.Uhara.ScanRel(3, "48 8b 15 ?? ?? ?? ?? 48 8b 4c 24 ?? e8 ?? ?? ?? ?? 4c 8b 78");
 	IntPtr MissionManager = vars.Uhara.ScanRel(3, "48 8b 05 ?? ?? ?? ?? 48 8b 80 ?? ?? ?? ?? 4c 8b 60 ?? 4d 85 e4");
@@ -60,7 +63,7 @@ init
 	
 	vars.Helper["CurrentGameScene"] = vars.Helper.Make<int>(GameFlowManager, 0x90); //GameFlowManager
 	
-	if (version == "Release" || version == "4 March 2025"){
+	if(version == "Release" || version == "4 March 2025"){
 		vars.Helper["QuestEndType"] = vars.Helper.Make<byte>(MissionManager, 0x158, 0x38, 0xCC); //MissionManager > _QuestDirector > QuestEndType
 		vars.Helper["QuestID"] = vars.Helper.Make<int>(MissionManager, 0x158, 0x20, 0x38); //MissionManager > _QuestDirector > MissionType
 		
@@ -68,12 +71,20 @@ init
 		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x1E0, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
 	}
 	
-	else{
+	else if(version == "4 April 2025" || version == "16 April 2025"){
 		vars.Helper["QuestEndType"] = vars.Helper.Make<byte>(MissionManager, 0x158, 0x38, 0xDC); //MissionManager > _QuestDirector > QuestEndType
 		vars.Helper["QuestID"] = vars.Helper.Make<int>(MissionManager, 0x158, 0x20, 0x38); //MissionManager > _QuestDirector > MissionType
 		
 		vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(MissionManager, 0x1E8, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
 		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x1E8, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
+	}
+	
+	else{
+		vars.Helper["QuestEndType"] = vars.Helper.Make<byte>(MissionManager, 0x168, 0x38, 0xDC); //MissionManager > _QuestDirector > QuestEndType
+		vars.Helper["QuestID"] = vars.Helper.Make<int>(MissionManager, 0x168, 0x20, 0x38); //MissionManager > _QuestDirector > MissionType
+		
+		vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(MissionManager, 0x200, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
+		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x200, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
 	}
 		
 	//vars.Helper["IsCurrentFramePause"] = vars.Helper.Make<bool>(PlayerManager, 0x114); //PlayerManager
@@ -100,7 +111,7 @@ update
 	vars.Helper.Update();
 	vars.Helper.MapPointers();
 	
-	//print(modules.First().ModuleMemorySize.ToString());
+	print(modules.First().ModuleMemorySize.ToString());
 
 }
 
@@ -159,5 +170,3 @@ reset
 {
 	return current.CutsceneID == 2 && old.CutsceneID != 2;
 }
-
-
