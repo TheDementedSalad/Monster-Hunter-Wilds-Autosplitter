@@ -33,6 +33,9 @@ init
 		case (584716288):
 			version = "28 May 2025";
 			break;
+		case (619167744):
+			version = "27 Aug 2025";
+			break;
 	}
 
 	IntPtr SoundManagerApp = vars.Uhara.ScanRel(3, "48 8b 3d ?? ?? ?? ?? 48 8b 72 ?? 48 85 f6");
@@ -170,3 +173,5 @@ reset
 {
 	return current.CutsceneID == 2 && old.CutsceneID != 2;
 }
+
+
