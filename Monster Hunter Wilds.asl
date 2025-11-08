@@ -36,6 +36,9 @@ init
 		case (619167744):
 			version = "27 Aug 2025";
 			break;
+		case (615530496):
+			version = "30 Oct 2025";
+			break;
 	}
 
 	IntPtr SoundManagerApp = vars.Uhara.ScanRel(3, "48 8b 3d ?? ?? ?? ?? 48 8b 72 ?? 48 85 f6");
@@ -59,8 +62,6 @@ init
 	
 	vars.Helper["FullFade"]= vars.Helper.Make<byte>(FadeManager, 0x61); //FadeManager > IsVisibleStateAny
 		
-	vars.Helper["Loading"] = vars.Helper.Make<bool>(SoundManagerApp, 0xE8); //SoundManagerApp > Loading
-		
 	vars.Helper["CutsceneID"] = vars.Helper.Make<int>(DemoMediator, 0x68, 0x10, 0x20, 0x10, 0x44); //DemoMediator > 
 	vars.Helper["CutsceneID"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
@@ -72,6 +73,8 @@ init
 		
 		vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(MissionManager, 0x1E0, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
 		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x1E0, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
+		
+		vars.Helper["Loading"] = vars.Helper.Make<bool>(SoundManagerApp, 0xE8); //SoundManagerApp > Loading
 	}
 	
 	else if(version == "4 April 2025" || version == "16 April 2025"){
@@ -80,6 +83,18 @@ init
 		
 		vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(MissionManager, 0x1E8, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
 		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x1E8, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
+		
+		vars.Helper["Loading"] = vars.Helper.Make<bool>(SoundManagerApp, 0xE8); //SoundManagerApp > Loading
+	}
+	
+	else if(version == "28 May 2025" || version == "27 Aug 2025"){
+		vars.Helper["QuestEndType"] = vars.Helper.Make<byte>(MissionManager, 0x168, 0x38, 0xDC); //MissionManager > _QuestDirector > QuestEndType
+		vars.Helper["QuestID"] = vars.Helper.Make<int>(MissionManager, 0x168, 0x20, 0x38); //MissionManager > _QuestDirector > MissionType
+		
+		vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(MissionManager, 0x200, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
+		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x200, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
+		
+		vars.Helper["Loading"] = vars.Helper.Make<bool>(SoundManagerApp, 0xE8); //SoundManagerApp > Loading
 	}
 	
 	else{
@@ -88,6 +103,8 @@ init
 		
 		vars.Helper["ObjectiveID"] = vars.Helper.Make<int>(MissionManager, 0x200, 0x10, 0x20, 0x50, 0x90, 0x10, 0x30); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > ObjectiveGoParts > Array(0) > ObjectiveID
 		vars.Helper["MissionID"] = vars.Helper.Make<int>(MissionManager, 0x200, 0x10, 0x20, 0x50, 0x104); //MissionManager > StoryZoneController > Array(0) > _MissionCtrl > MissionID
+		
+		vars.Helper["Loading"] = vars.Helper.Make<bool>(SoundManagerApp, 0xF0); //SoundManagerApp > Loading
 	}
 		
 	//vars.Helper["IsCurrentFramePause"] = vars.Helper.Make<bool>(PlayerManager, 0x114); //PlayerManager
